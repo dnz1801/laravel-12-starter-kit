@@ -38,7 +38,7 @@ This repository serves as a lightweight starting point for professional Laravel 
 
 1. Clone the repository
    ```bash
-   git clone <repo-url>
+   git clone https://github.com/dnz1801/laravel-12-starter-kit
    cd laravel-12-starter-kit
    ```
 
