@@ -1,61 +1,91 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel 12 Starter Kit
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This repository serves as a lightweight starting point for professional Laravel projects. It combines best practices without bloating the core – enabling you to become productive quickly without needing to strip things out later.
 
-## About Laravel
+## Included Packages
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+**Backend**
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- [Laravel 12](https://laravel.com) – latest framework version with PHP 8.2
+- [Laravel Sanctum](https://laravel.com/docs/sanctum) – token authentication for SPAs and APIs
+- [Livewire 3](https://livewire.laravel.com/) – modern components with minimal JavaScript
+- [Spatie Media Library](https://spatie.be/docs/laravel-medialibrary) – file-based media management
+- [Spatie Permission](https://spatie.be/docs/laravel-permission) – roles and permissions
+- [Laravel Telescope](https://laravel.com/docs/telescope) – debugging dashboard
+- [Laravel Tinker](https://laravel.com/docs/tinker) – interactive shell
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+**Developer Tools**
 
-## Learning Laravel
+- [Laravel Sail](https://laravel.com/docs/sail) – Docker-based local development environment
+- [Laravel Pint](https://laravel.com/docs/pint) – code formatting
+- [Laravel Pail](https://github.com/laravel/pail) & [Debugbar](https://github.com/barryvdh/laravel-debugbar) – logging & debugging
+- [Pest](https://pestphp.com) – testing framework
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+**Frontend**
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- [Vite](https://vitejs.dev) & [Laravel Vite Plugin](https://laravel.com/docs/vite)
+- [Tailwind CSS 4](https://tailwindcss.com)
+- [Axios](https://axios-http.com) for HTTP requests
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Requirements
 
-## Laravel Sponsors
+- PHP >= 8.2
+- Composer
+- Node.js & npm
+- Database (MySQL by default; tests use in-memory SQLite)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Installation & Setup
 
-### Premium Partners
+1. Clone the repository
+   ```bash
+   git clone <repo-url>
+   cd laravel-12-starter-kit
+   ```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+2. Create environment file
+   ```bash
+   cp .env.example .env
+   # Adjust database and other values
+   ```
 
-## Contributing
+3. Install dependencies
+   ```bash
+   composer install
+   npm install
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4. Generate app key & run migrations
+   ```bash
+   php artisan key:generate
+   php artisan migrate
+   ```
 
-## Code of Conduct
+5. Start development server – runs PHP server, queue listener, and Vite
+   ```bash
+   composer dev
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+   Alternatively, start each service separately:
+   ```bash
+   php artisan serve
+   php artisan queue:listen
+   npm run dev
+   ```
 
-## Security Vulnerabilities
+## Running Tests
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+composer test
+```
+
+## Production Build
+
+Compile assets for production:
+
+```bash
+npm run build
+```
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The Starter Kit is released under the MIT License.
