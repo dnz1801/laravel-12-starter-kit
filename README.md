@@ -85,6 +85,14 @@ Compile assets for production:
 ```bash
 npm run build
 ```
+## Contributing
+
+To contribute, please ensure code style consistency and verify tests pass:
+
+```bash
+./vendor/bin/pint
+composer test
+```
 
 ## License
 
